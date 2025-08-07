@@ -33,3 +33,6 @@ topic which will be located in the "Topics" section (left-side column).
 \end{enumerate}
 \end{document}
 ```
+### Your LaTex PDF file will look like this: 
+
+![Cornell Template Example in LaTex](src/cornell_example.png)
