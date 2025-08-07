@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %Images
+\usepackage{geometry} %Margins
+\usepackage{tikz} %Line
+\usepackage{lipsum} %Lorem Ipsum
+\usepackage{enumitem} %Enumeration
+\usepackage{everypage} %Modify all pages
+\usepackage{marginnote} %Margins
+
+
+% Margin Configuration
+\geometry{
+    left=6cm,
+    right=1.5cm,
+    top=2cm,
+    bottom=2.5cm,
+    marginparsep=1cm,
+    marginparwidth=4cm
+}
+
+% Vertical Line
+\newcommand{\drawcornelllines}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[thick] ([xshift=5.5cm,yshift=-1.5cm]current page.north west) 
+                  -- ([xshift=5.5cm,yshift=2.5cm]current page.south west);
+    \end{tikzpicture}%
+}
+
+% Add the vertical line in every page
+\AddEverypageHook{\drawcornelllines}
+
+% The \topic{} command to add a new topic
+\newcommand{\topic}[1]{%
+    \marginnote{\raggedright\small\textbf{#1}}%
+}
+
+% Marginnote configuration
+\reversemarginpar
+
+% Personalized title 
+\newcommand{\cornelltitle}[1]{%
+    \begin{center}
+        \huge\textbf{#1}
+    \end{center}
+    \vspace{1em}
+}
+
+% Paragraph Configuration
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% ===============================
+% Beginning of the Document
+% ===============================
+
+\begin{document}
+
+\cornelltitle{Cornell Method}
+\lipsum[1]
+
+\topic{¿What is the Cornell Method?}
+\lipsum[1]
+
+\section{Advantages of the Method}
+\topic{What are the main advantages?}
+\lipsum[1]
+\begin{enumerate}
+\item \lipsum[1]
+\item \lipsum[1]
+\item \lipsum[1]
+\item \lipsum[1]
+\end{enumerate}
+
+
+\end{document}
